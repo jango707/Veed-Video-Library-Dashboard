@@ -12,7 +12,4 @@ router.get('/', videoController.getVideos)
 // POST /videos
 router.post('/', videoController.createVideo)
 
-// DELETE /videos/:id
-router.delete('/:id', videoController.deleteVideo)
-
 export default router

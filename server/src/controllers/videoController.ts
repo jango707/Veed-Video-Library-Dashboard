@@ -7,7 +7,6 @@ export async function getVideos(req: Request, res: Response) {
   try {
      const {search, sort, tags} = SearchParamsSchema
       .parse(req.query)
-    
     // Fetch videos from the database
     const videos = await videoDatabase.findMany({search, tags, sort});
 
@@ -18,7 +17,7 @@ export async function getVideos(req: Request, res: Response) {
     if (error instanceof Error) {
       return res.status(404).json({ message: error.message});
     }
-    res.status(500).json({ message: 'Failed to fetch videos'});
+    res.status(500).json({ message: 'Failed to get videos'});
   }
 }
 
@@ -47,18 +46,5 @@ export async function createVideo(req: Request, res: Response) {
       });
     }
     res.status(500).json({ message: 'Failed to create video' , error})
-  }
-}
-
-// DELETE /videos/:id
-export async function deleteVideo(req: Request, res: Response) {
-  try {
-    const id = req.params.id
-    const success = await videoDatabase.deleteById(id)
-    if (!success) return res.status(404).json({ message: 'Video not found' })
-    res.json({ message: `Video with id ${id} deleted successfully` })
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ message: 'Failed to delete video' })
   }
 }

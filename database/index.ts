@@ -23,40 +23,30 @@ const writeData = async (data: Video[]) => {
   await fs.writeFileSync(dataPath, jsonData);
 }
 
-const findMany = ({search, tags, sort}: SearchParams) => {
-    const data = readData();
-    return data.then(videos => {
-        let filteredVideos = videos;
+const findMany = async ({search, tags, sort}: SearchParams) => {
+    const data = await readData();
+    let filteredVideos = data;
 
-        if (search) {
-            filteredVideos = filteredVideos.filter(video => 
-                video.title.trim().toLowerCase().includes(search.trim().toLowerCase())
-            );
-        }
+    if (search) {
+        filteredVideos = filteredVideos.filter(video => 
+            video.title.trim().toLowerCase().includes(search.trim().toLowerCase())
+        );
+    }
 
-        if (tags && tags.length > 0) {
-            filteredVideos = filteredVideos.filter(video => 
-                video.tags?.some(tag => tags.includes(tag))
-            );
-        }
-        
-        if (sort === 'desc') {
-            filteredVideos.sort((a, b) => b.views - a.views);
-        }else{
-          filteredVideos.sort((a, b) => a.views - b.views);
-        }
+    if (tags && tags.length > 0) {
+        filteredVideos = filteredVideos.filter(video => 
+            video.tags?.some(tag => tags.includes(tag))
+        );
+    }
+    
+    if (sort === 'desc') {
+        filteredVideos.sort((a, b) => b.views - a.views);
+    }else{
+        filteredVideos.sort((a, b) => a.views - b.views);
+    }
 
-        return filteredVideos;
-    });
+    return filteredVideos;
 }
-
-const deleteById = async (id: string) => {
-  const data = await readData();
-  const filteredData = data.filter(video => video.id !== id);
-  await writeData(filteredData);
-  return filteredData;
-}
-
 const createOne = async (video: Video) => {
   const data = await readData();
   data.push(video);
@@ -67,6 +57,7 @@ const createOne = async (video: Video) => {
 
 export default {
   findMany,
-  deleteById,   
   createOne
 };
+
+// todo: complete CRUD, add update and delete

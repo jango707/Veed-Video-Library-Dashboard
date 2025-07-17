@@ -15,7 +15,7 @@ export const videoSchema = IncomingVideoSchema.extend({
 
 export const SearchParamsSchema = z.object({
     search: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    tag: z.string().optional(),
     sort: z.enum(['asc', 'desc']).optional().default('asc')
 })
 

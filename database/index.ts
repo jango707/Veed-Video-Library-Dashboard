@@ -23,7 +23,7 @@ const writeData = async (data: Video[]) => {
   await fs.writeFileSync(dataPath, jsonData);
 }
 
-const findMany = async ({search, tags, sort}: SearchParams) => {
+const findMany = async ({search, tag, sort}: SearchParams) => {
     const data = await readData();
     let filteredVideos = data;
 
@@ -32,16 +32,17 @@ const findMany = async ({search, tags, sort}: SearchParams) => {
             video.title.trim().toLowerCase().includes(search.trim().toLowerCase())
         );
     }
-
-    if (tags && tags.length > 0) {
+    
+    if (tag){
         filteredVideos = filteredVideos.filter(video => 
-            video.tags?.some(tag => tags.includes(tag))
+            video.tags?.some(t => t === tag)
         );
     }
     
     if (sort === 'desc') {
         filteredVideos.sort((a, b) => b.views - a.views);
     }else{
+        // default, so will always sort in asc
         filteredVideos.sort((a, b) => a.views - b.views);
     }
 

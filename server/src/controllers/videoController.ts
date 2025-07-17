@@ -5,10 +5,10 @@ import { IncomingVideoSchema, SearchParamsSchema, Video } from '../../../zod/vid
 // GET /videos
 export async function getVideos(req: Request, res: Response) {
   try {
-     const {search, sort, tags} = SearchParamsSchema
+     const {search, sort, tag} = SearchParamsSchema
       .parse(req.query)
     // Fetch videos from the database
-    const videos = await videoDatabase.findMany({search, tags, sort});
+    const videos = await videoDatabase.findMany({search, tag, sort});
 
     // TODO: pagination 
 

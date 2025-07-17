@@ -1,13 +1,7 @@
-// src/index.ts
-import express from 'express';
+import app from "./app"
 
-const app = express();
-const PORT = 9999;
-
-app.get('/', (_req, res) => {
-  res.send('Hello Express Server');
-});
+const PORT = process.env.PORT || 9999
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+  console.log(`Server listening on port ${PORT}`)
+})

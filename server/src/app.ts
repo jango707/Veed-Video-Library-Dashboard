@@ -1,14 +1,14 @@
-import express from 'express'
-import videoRoutes from './routes/videoRoutes'
+import express from 'express';
+import videoRoutes from './routes/videoRoutes';
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Your server is running!')
-})
+  res.send('Your server is running!');
+});
 
-app.use('/videos', videoRoutes)
+app.use('/videos', videoRoutes);
 
-export default app
+export default app;

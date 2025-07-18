@@ -6,6 +6,10 @@ backend:
     @echo "Starting server..."
     cd server && yarn start:dev
 
+frontend-test:
+    @echo "Testing frontend..."
+    cd webapp && yarn test --watchAll=false
+
 backend-test:
     @echo "Testing backend..."
     cd server && yarn test

@@ -51,20 +51,20 @@ having used ChakraUI previously, I find it incredibly intuitive to work with and
 
 - **Testing & Development:**
 
-- `Jest` with `ts-jest` for unit testing
-- `Prettier` for code formatting
-- `ESLint` for code linting
+`Jest` with `ts-jest` for unit testing
+`Prettier` for code formatting
+`ESLint` for code linting
 
 - **Build Tools & Package Management:**
 
-- `yarn` for package management
-- `just` for task automation and development workflow
-- `nvm` for Node.js version management (v22)
+`yarn` for package management
+`just` for task automation and development workflow
+`nvm` for Node.js version management (v22)
 
 - **Type Safety: ZOD**
-- `zod` was used to create type-safety between the back and frontend
-- Ideally, this can get extracted into its own package and shipped via npm or some registry
-- For now it is a local package where any service in the repo can hook into.
+`zod` was used to create type-safety between the back and frontend
+Ideally, this can get extracted into its own package and shipped via npm or some registry
+For now it is a local package where any service in the repo can hook into.
 
 ## Assumptions & Trade-offs 📘
 

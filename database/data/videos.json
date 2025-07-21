@@ -640,39 +640,26 @@
     {
       "id": "v-050",
       "title": "Video SEO for YouTube",
+      "thumbnail_url": "https://picsum.photos/seed/video50/300/200",
+      "created_at": "2024-12-18T16:37:28Z",
+      "duration": 524,
+      "views": 29876,
       "tags": [
         "SEO",
         "YouTube",
         "discoverability"
+      ]
+    },
+    {
+      "id": "v-1753085527914",
+      "created_at": "2025-07-21T08:12:07.914Z",
+      "tags": [
+        "ai"
       ],
-      "created_at": "2024-12-18T16:37:28Z",
-      "thumbnail_url": "https://picsum.photos/seed/video50/300/200",
-      "duration": 524,
-      "views": 29876
-    },
-    {
-      "title": "Video SEO for YouTube",
-      "thumbnail_url": "https://via.placeholder.com/150",
+      "title": "Jang's video",
+      "thumbnail_url": "https://picsum.photos/seed/video49/300/200",
       "duration": 42,
-      "views": 501,
-      "id": "v-1752772243913",
-      "created_at": "2025-07-17T17:10:43.913Z"
-    },
-    {
-      "title": "Video SEO for YouTube",
-      "thumbnail_url": "https://via.placeholder.com/150",
-      "duration": 42,
-      "views": 501,
-      "id": "v-1752772595041",
-      "created_at": "2025-07-17T17:16:35.041Z"
-    },
-    {
-      "title": "Video SEO for YouTube",
-      "thumbnail_url": "https://via.placeholder.com/150",
-      "duration": 42,
-      "views": 501,
-      "id": "v-1752772835651",
-      "created_at": "2025-07-17T17:20:35.651Z"
+      "views": 501
     }
   ]
 }

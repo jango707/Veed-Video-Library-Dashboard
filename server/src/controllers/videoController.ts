@@ -6,7 +6,6 @@ import { IncomingVideoSchema, SearchParamsSchema, Video } from '../../../zod/vid
 export async function getVideos(req: Request, res: Response) {
   try {
     const { search, sort, tag } = SearchParamsSchema.parse(req.query);
-    // Fetch videos from the database
     const videos = await videoDatabase.findMany({ search, tag, sort });
 
     // TODO: pagination
@@ -28,10 +27,15 @@ export async function createVideo(req: Request, res: Response) {
     const uuid = Date.now().toString(); // todo: generate successive ID based on db index
 
     const newVideo: Video = {
-      ...parsed,
       id: `v-${uuid}`,
       created_at: new Date().toISOString(),
+      tags: parsed.tags,
+      title: parsed.title,
+      thumbnail_url: parsed.thumbnail_url!, // zod will default these values
+      duration: parsed.duration!,
+      views: parsed.views!,
     };
+
     await videoDatabase.createOne(newVideo);
 
     res.json({ message: 'Video created successfully', video: newVideo });

@@ -18,10 +18,6 @@ install:
     @echo "Installing dependencies for both frontend and backend..."
     cd server && yarn install && cd ../webapp && yarn install && cd ../
 
-init:
-    @echo "Booting up the project for the first time..."
-    nvm use & just install
-
 lint:
     @echo "Linting both frontend and backend..."
     cd server && yarn lint && cd ../webapp && yarn lint

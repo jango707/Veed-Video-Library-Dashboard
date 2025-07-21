@@ -4,13 +4,17 @@ import { z } from 'zod'
 export const IncomingVideoSchema = z.object({
   title: z.string().min(3),
   tags: z.array(z.string()).optional(),
-  thumbnail_url: z.url().optional().default('https://picsum.photos/seed/video49/300/200'),
-  duration: z.number().int().nonnegative().optional().default(42),
-  views: z.number().int().nonnegative().optional().default(501),
+  thumbnail_url: z.url().default('https://picsum.photos/seed/video49/300/200').optional(),
+  duration: z.number().int().nonnegative().default(42).optional(),
+  views: z.number().int().nonnegative().default(501).optional(),
 })
+
 export const videoSchema = IncomingVideoSchema.extend({
   id: z.string(),
   created_at: z.string(),
+  duration: z.number().int().nonnegative(),
+  views: z.number().int().nonnegative(),
+  thumbnail_url: z.string()
 })
 
 export const SearchParamsSchema = z.object({

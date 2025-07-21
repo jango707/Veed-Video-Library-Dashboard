@@ -40,10 +40,18 @@ const findMany = async ({search, tag, sort}: SearchParams) => {
     }
     
     if (sort === 'desc') {
-        filteredVideos.sort((a, b) => b.views - a.views);
+        filteredVideos.sort((a, b) => {
+            const dateA = new Date(a.created_at);
+            const dateB = new Date(b.created_at);
+            return dateB.getTime() - dateA.getTime();
+        });
     }else{
         // default, so will always sort in asc
-        filteredVideos.sort((a, b) => a.views - b.views);
+        filteredVideos.sort((a, b) => {
+            const dateA = new Date(a.created_at);
+            const dateB = new Date(b.created_at);
+            return dateA.getTime() - dateB.getTime();
+        });
     }
 
     return filteredVideos;

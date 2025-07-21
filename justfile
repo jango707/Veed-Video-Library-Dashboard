@@ -29,3 +29,7 @@ lint:
 format:
     @echo "Formatting both frontend and backend..."
     cd server && yarn format && cd ../webapp && yarn format
+
+all:
+    @echo "Runs everything"
+    just install format lint test

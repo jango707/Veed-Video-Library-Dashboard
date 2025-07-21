@@ -28,8 +28,8 @@ yarn start
 ### Environment Variables
 
 | Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT` | `9999` | Server port |
+| -------- | ------- | ----------- |
+| `PORT`   | `9999`  | Server port |
 
 ## 📋 API Documentation
 
@@ -63,11 +63,11 @@ Retrieves a list of videos with optional filtering and sorting.
 
 **Query Parameters:**
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `search` | string | Search videos by title | `?search=tutorial` |
-| `tag` | string | Filter videos by tag | `?tag=analytics` |
-| `sort` | enum | Sort order (`asc` or `desc`) | `?sort=desc` |
+| Parameter | Type   | Description                  | Example            |
+| --------- | ------ | ---------------------------- | ------------------ |
+| `search`  | string | Search videos by title       | `?search=tutorial` |
+| `tag`     | string | Filter videos by tag         | `?tag=analytics`   |
+| `sort`    | enum   | Sort order (`asc` or `desc`) | `?sort=desc`       |
 
 **Example Request:**
 
@@ -108,13 +108,13 @@ Creates a new video entry.
 
 **Request Body:**
 
-| Field | Type | Required | Default | Description |
-|-------|------|----------|---------|-------------|
-| `title` | string | ✅ | - | Video title (min 3 characters) |
-| `tags` | string[] | ❌ | `[]` | Array of tags |
-| `thumbnail_url` | string (URL) | ❌ | Random placeholder | Video thumbnail URL |
-| `duration` | number | ❌ | `42` | Video duration in seconds |
-| `views` | number | ❌ | `501` | View count |
+| Field           | Type         | Required | Default            | Description                    |
+| --------------- | ------------ | -------- | ------------------ | ------------------------------ |
+| `title`         | string       | ✅       | -                  | Video title (min 3 characters) |
+| `tags`          | string[]     | ❌       | `[]`               | Array of tags                  |
+| `thumbnail_url` | string (URL) | ❌       | Random placeholder | Video thumbnail URL            |
+| `duration`      | number       | ❌       | `42`               | Video duration in seconds      |
+| `views`         | number       | ❌       | `501`              | View count                     |
 
 **Example Request:**
 

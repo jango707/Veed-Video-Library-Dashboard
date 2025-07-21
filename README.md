@@ -62,6 +62,7 @@ having used ChakraUI previously, I find it incredibly intuitive to work with and
 `nvm` for Node.js version management (v22)
 
 - **Type Safety: ZOD**
+- 
 `zod` was used to create type-safety between the back and frontend
 Ideally, this can get extracted into its own package and shipped via npm or some registry
 For now it is a local package where any service in the repo can hook into.
@@ -83,12 +84,12 @@ The benefit of using this local mimic database is, that you can treat it like a 
 
 These were some of the things I intentionally left out:
 
-- **Pageination**
+**Pageination**
 
-- Creating pageination logic on the backend can add complexity quickly. This leads to more unit tests and increase on potential bugs. I considered pageination based on creation date (suitable for infinite scroll) and on fixed numbers (static grid). Both seemed like a quick solution was not feasible.
-- On the frontend, it requires additional components for the UI, as well as state management. When a page is refreshed, you would like to stay on the same page for example.
-- Implementing a full-stack pageination wa snot in the time-scope for this exercise as other features were more important.
-- I justified this choice by assuming that the video grid does not necessarily need to be pageinated. At the moment it shows 50 videos (thumbnails), which a website can easily handle. I assumed that the scale of this website is only for a single user, so the order of magnitude should be fairly small (i.e. not 1000s of uplaods per second). tehrefore it made sense to me to drop the pageination feature.
+Creating pageination logic on the backend can add complexity quickly. This leads to more unit tests and increase on potential bugs. I considered pageination based on creation date (suitable for infinite scroll) and on fixed numbers (static grid). Both seemed like a quick solution was not feasible.
+On the frontend, it requires additional components for the UI, as well as state management. When a page is refreshed, you would like to stay on the same page for example.
+Implementing a full-stack pageination wa snot in the time-scope for this exercise as other features were more important.
+I justified this choice by assuming that the video grid does not necessarily need to be pageinated. At the moment it shows 50 videos (thumbnails), which a website can easily handle. I assumed that the scale of this website is only for a single user, so the order of magnitude should be fairly small (i.e. not 1000s of uplaods per second). tehrefore it made sense to me to drop the pageination feature.
 
 - **Acceptance / e2e tests**
 

@@ -44,7 +44,6 @@ test('renders the Video Grid', () => {
   const linkElement2 = screen.getByText(/Video 2/i);
   const linkElement3 = screen.getByText(/tag3/i);
 
-
   expect(linkElement).toBeInTheDocument();
   expect(linkElement2).toBeInTheDocument();
   expect(linkElement3).toBeInTheDocument();

@@ -14,6 +14,10 @@ backend-test:
     @echo "Testing backend..."
     cd server && yarn test
 
+test: 
+    @echo "Running all tests..."
+    just frontend-test backend-test
+
 install:
     @echo "Installing dependencies for both frontend and backend..."
     cd server && yarn install && cd ../webapp && yarn install && cd ../

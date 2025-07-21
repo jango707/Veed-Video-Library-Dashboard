@@ -62,7 +62,7 @@ const SearchBar = ({
         <Button onClick={handleSortChange} variant={'outline'} color={colors.woodsmoke} ml={2}>
           <span style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
             <>{sort === 'asc' ? 'Most' : ' Least'} Recent</>{' '}
-            {sort === 'asc' ? <LuArrowDown /> : <LuArrowUp />}
+            {sort === 'asc' ? <LuArrowUp /> : <LuArrowDown />}
           </span>
         </Button>
       </form>

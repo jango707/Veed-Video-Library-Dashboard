@@ -11,8 +11,8 @@ This is a fullstack video dashboard application. To get started, ensure you have
 
 ### Requirements (optional for a better experience)
 
-- nvm
-- just
+- [nvm](https://formulae.brew.sh/formula/nvm)
+- [just](https://formulae.brew.sh/formula/just)
 
 ### Set up
 
